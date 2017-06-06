@@ -1,0 +1,9 @@
+package improbable.building;
+
+import "improbable/npc/NPCRole.schema";
+
+component NPCSpawner {
+  id = 1703;
+  bool spawning_enabled = 1;
+  map<improbable.npc.NPCRole, float> cooldowns = 2;
+}

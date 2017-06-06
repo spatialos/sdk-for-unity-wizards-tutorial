@@ -1,0 +1,22 @@
+package improbable.npc;
+
+type WizardFSMState {
+  enum StateEnum {
+    IDLE = 0;
+    MOVING_TO_TARGET = 1;
+    ATTACKING_TARGET = 2;
+    DEFENDING_TARGET = 3;
+    ON_FIRE = 4;
+  }  
+}
+
+type NPCWizardData {
+  WizardFSMState.StateEnum current_state = 1;
+  EntityId target_entity_id = 2;
+  Vector3f target_position = 3;
+}
+
+component NPCWizard {
+  id = 1802;
+  data NPCWizardData;
+}

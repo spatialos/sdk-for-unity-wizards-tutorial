@@ -1,0 +1,8 @@
+package improbable.life;
+
+component Health {
+  id = 1300;
+  int32 current_health = 1;
+  int32 max_health = 2;
+  bool can_be_changed = 3;
+}

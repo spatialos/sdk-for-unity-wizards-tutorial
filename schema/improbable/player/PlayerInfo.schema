@@ -1,0 +1,7 @@
+package improbable.player;
+
+component PlayerInfo {
+  id = 1201;
+  bool is_alive = 1;
+  Coordinates initial_spawn_position = 2;
+}

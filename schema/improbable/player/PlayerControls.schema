@@ -1,0 +1,6 @@
+package improbable.player;
+
+component PlayerControls {
+  id = 1200;
+  Coordinates target_position = 1;
+}

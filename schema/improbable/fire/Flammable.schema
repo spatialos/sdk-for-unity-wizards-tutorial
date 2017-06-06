@@ -1,0 +1,28 @@
+package improbable.fire;
+
+import "improbable/core/Nothing.schema";
+
+enum FireEffectType {
+  BIG = 0;
+  SMALL = 1;
+}
+
+type ExtinguishRequest {
+  bool can_be_ignited = 1;
+}
+
+type SetCanBeIgnitedRequest {
+  bool can_be_ignited = 1;
+}
+
+component Flammable {
+  id = 1400;
+
+  bool is_on_fire = 1;
+  bool can_be_ignited = 2;
+  FireEffectType effect_type = 3;
+
+  command improbable.core.Nothing ignite(improbable.core.Nothing);
+  command improbable.core.Nothing extinguish(ExtinguishRequest);
+  command improbable.core.Nothing set_can_be_ignited(SetCanBeIgnitedRequest);
+}

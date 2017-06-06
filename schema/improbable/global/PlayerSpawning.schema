@@ -1,0 +1,11 @@
+package improbable.global;
+
+import "improbable/core/Nothing.schema";
+
+type SpawnPlayerRequest {}
+
+component PlayerSpawning {
+  id = 1100;
+
+  command improbable.core.Nothing spawn_player(SpawnPlayerRequest);
+}

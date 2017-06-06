@@ -1,0 +1,24 @@
+package improbable.npc;
+
+enum NavigationState {
+  INACTIVE = 0;
+  POSITION = 1;
+  ENTITY = 2;
+}
+
+type NavigationFinished {
+  bool success = 1;
+}
+
+type TargetNavigationData {
+  NavigationState navigation_state = 1;
+  Vector3f target_position = 2;
+  EntityId target_entity_id = 3;
+  float interaction_sqr_distance = 4;
+}
+
+component TargetNavigation {
+  id = 1800;
+  data TargetNavigationData;
+  event NavigationFinished navigation_finished;
+}

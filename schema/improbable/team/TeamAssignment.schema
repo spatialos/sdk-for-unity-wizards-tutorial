@@ -1,0 +1,6 @@
+package improbable.team;
+
+component TeamAssignment {
+  id = 1005;
+  uint32 team_id = 1;	
+}

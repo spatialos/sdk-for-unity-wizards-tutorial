@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 9a465e4b8a9e3ee40bfc76e4062c43f1
+timeCreated: 1481195788
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: char01_l_arm_ClavicleSHJnt
+    100002: char01_l_arm_ElbowSHJnt
+    100004: char01_l_arm_ShoulderSHJnt
+    100006: char01_l_arm_WristSHJnt
+    100008: char01_l_Hand_01_01SHJnt
+    100010: char01_l_Hand_01_02SHJnt
+    100012: char01_l_Hand_02_01SHJnt
+    100014: char01_l_Hand_02_02SHJnt
+    100016: char01_l_leg_AnkleSHJnt
+    100018: char01_l_leg_BallSHJnt
+    100020: char01_l_leg_HipSHJnt
+    100022: char01_l_leg_KneeSHJnt
+    100024: char01_l_leg_ToeSHJnt
+    100026: char01_l_socket_hand_AuxSHJnt
+    100028: char01_MAINSHJnt
+    100030: char01_neck_01SHJnt
+    100032: char01_neck_02SHJnt
+    100034: char01_neck_TopSHJnt
+    100036: char01_r_arm_ClavicleSHJnt
+    100038: char01_r_arm_ElbowSHJnt
+    100040: char01_r_arm_ShoulderSHJnt
+    100042: char01_r_arm_WristSHJnt
+    100044: char01_r_Hand_01_01SHJnt
+    100046: char01_r_Hand_01_02SHJnt
+    100048: char01_r_Hand_02_01SHJnt
+    100050: char01_r_Hand_02_02SHJnt
+    100052: char01_r_leg_AnkleSHJnt
+    100054: char01_r_leg_BallSHJnt
+    100056: char01_r_leg_HipSHJnt
+    100058: char01_r_leg_KneeSHJnt
+    100060: char01_r_leg_ToeSHJnt
+    100062: char01_r_socket_hand_AuxSHJnt
+    100064: char01_ROOTSHJnt
+    100066: char01_spine_01SHJnt
+    100068: char01_spine_02SHJnt
+    100070: char01_spine_TopSHJnt
+    100072: //RootNode
+    100074: lofi_character
+    400000: char01_l_arm_ClavicleSHJnt
+    400002: char01_l_arm_ElbowSHJnt
+    400004: char01_l_arm_ShoulderSHJnt
+    400006: char01_l_arm_WristSHJnt
+    400008: char01_l_Hand_01_01SHJnt
+    400010: char01_l_Hand_01_02SHJnt
+    400012: char01_l_Hand_02_01SHJnt
+    400014: char01_l_Hand_02_02SHJnt
+    400016: char01_l_leg_AnkleSHJnt
+    400018: char01_l_leg_BallSHJnt
+    400020: char01_l_leg_HipSHJnt
+    400022: char01_l_leg_KneeSHJnt
+    400024: char01_l_leg_ToeSHJnt
+    400026: char01_l_socket_hand_AuxSHJnt
+    400028: char01_MAINSHJnt
+    400030: char01_neck_01SHJnt
+    400032: char01_neck_02SHJnt
+    400034: char01_neck_TopSHJnt
+    400036: char01_r_arm_ClavicleSHJnt
+    400038: char01_r_arm_ElbowSHJnt
+    400040: char01_r_arm_ShoulderSHJnt
+    400042: char01_r_arm_WristSHJnt
+    400044: char01_r_Hand_01_01SHJnt
+    400046: char01_r_Hand_01_02SHJnt
+    400048: char01_r_Hand_02_01SHJnt
+    400050: char01_r_Hand_02_02SHJnt
+    400052: char01_r_leg_AnkleSHJnt
+    400054: char01_r_leg_BallSHJnt
+    400056: char01_r_leg_HipSHJnt
+    400058: char01_r_leg_KneeSHJnt
+    400060: char01_r_leg_ToeSHJnt
+    400062: char01_r_socket_hand_AuxSHJnt
+    400064: char01_ROOTSHJnt
+    400066: char01_spine_01SHJnt
+    400068: char01_spine_02SHJnt
+    400070: char01_spine_TopSHJnt
+    400072: //RootNode
+    400074: lofi_character
+    4300000: lofi_character
+    9500000: //RootNode
+    13700000: lofi_character
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

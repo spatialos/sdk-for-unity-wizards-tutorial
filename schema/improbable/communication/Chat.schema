@@ -1,0 +1,13 @@
+package improbable.communication;
+
+import "improbable/core/Nothing.schema";
+
+type ChatMessage {
+  string message = 1;
+}
+
+component Chat {
+  id = 1900;
+  command improbable.core.Nothing send_chat(ChatMessage);
+  event ChatMessage chat_sent;
+}

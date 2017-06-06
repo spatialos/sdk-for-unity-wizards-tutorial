@@ -1,0 +1,13 @@
+package improbable.building;
+
+import "improbable/core/Nothing.schema";
+
+type AddResource {
+  int32 quantity = 1;
+}
+
+component StockpileDepository {
+  id = 1702;
+  bool can_accept_resources = 1;
+  command improbable.core.Nothing add_resource(AddResource);
+}

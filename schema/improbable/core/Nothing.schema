@@ -1,0 +1,3 @@
+package improbable.core;
+
+type Nothing {}

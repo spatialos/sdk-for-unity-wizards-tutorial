@@ -1,0 +1,15 @@
+package improbable.building;
+
+enum BarracksState {
+  UNDER_CONSTRUCTION = 0;
+  CONSTRUCTION_FINISHED = 1;
+}
+
+type BarracksInfoData {
+  BarracksState barracks_state = 1;
+}
+
+component BarracksInfo {
+  id = 1701;
+  data BarracksInfoData;
+}

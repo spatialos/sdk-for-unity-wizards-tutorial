@@ -1,0 +1,12 @@
+package improbable.core;
+
+type TeleportEvent {
+  Coordinates target_position = 1;
+}
+
+component TransformComponent {
+  id = 1002;
+  EntityPosition position = 1;
+  uint32 rotation = 2;
+  event TeleportEvent teleport_event;
+}

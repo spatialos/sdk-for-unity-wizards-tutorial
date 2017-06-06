@@ -1,0 +1,14 @@
+package improbable.tree;
+
+type HarvestRequest {
+  EntityId harvester = 1;
+}
+
+type HarvestResponse {
+  int32 resources_taken = 1;
+}
+
+component Harvestable {
+  id = 1601;
+  command HarvestResponse harvest(HarvestRequest);
+}
