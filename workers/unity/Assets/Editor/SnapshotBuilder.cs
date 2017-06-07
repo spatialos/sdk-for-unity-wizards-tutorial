@@ -10,7 +10,7 @@ namespace Assets.Editor
     {
         private string snapshotPath;
 
-        private int currentEntityId;
+        private int currentEntityId = 1;
         private IDictionary<EntityId, SnapshotEntity> snapshotEntities = new Dictionary<EntityId, SnapshotEntity>();
 
         public SnapshotBuilder(string name, string path)
