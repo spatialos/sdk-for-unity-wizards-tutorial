@@ -32,7 +32,7 @@ namespace Assets.Gamelogic.EntityTemplate
 
             var template = new Entity();
             template.Add(new ClientAuthorityCheck.Data());
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new TransformComponent.Data(spawnPosition, 0));
             template.Add(new PlayerInfo.Data(true, spawnPosition));
             template.Add(new PlayerControls.Data(spawnPosition));
@@ -49,7 +49,7 @@ namespace Assets.Gamelogic.EntityTemplate
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
                 .SetWriteAccess<ClientAuthorityCheck>(specificClientPredicate)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<PlayerInfo>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<PlayerControls>(specificClientPredicate)
@@ -69,7 +69,7 @@ namespace Assets.Gamelogic.EntityTemplate
         public static SnapshotEntity CreateBarracksTemplate(Coordinates initialPosition, BarracksState barracksState, uint teamId)
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.BarracksPrefabName };
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new TransformComponent.Data(initialPosition, (uint)(UnityEngine.Random.value * 360)));
             template.Add(new BarracksInfo.Data(barracksState));
             template.Add(new Health.Data(barracksState == BarracksState.CONSTRUCTION_FINISHED ? SimulationSettings.BarracksMaxHealth : 0, SimulationSettings.BarracksMaxHealth, true));
@@ -80,7 +80,7 @@ namespace Assets.Gamelogic.EntityTemplate
 
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<BarracksInfo>(CommonRequirementSets.PhysicsOnly)
@@ -99,7 +99,7 @@ namespace Assets.Gamelogic.EntityTemplate
         public static SnapshotEntity CreateTreeTemplate(Coordinates initialPosition, uint initialRotation)
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.TreePrefabName };
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new TransformComponent.Data(initialPosition, initialRotation));
             template.Add(new Harvestable.Data());
             template.Add(new Health.Data(SimulationSettings.TreeMaxHealth, SimulationSettings.TreeMaxHealth, true));
@@ -108,7 +108,7 @@ namespace Assets.Gamelogic.EntityTemplate
 
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Harvestable>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
@@ -124,7 +124,7 @@ namespace Assets.Gamelogic.EntityTemplate
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.NPCPrefabName };
             template.Add(new TransformComponent.Data(initialPosition, 0));
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new Health.Data(SimulationSettings.LumberjackMaxHealth, SimulationSettings.LumberjackMaxHealth, true));
             template.Add(new Flammable.Data(false, true, FireEffectType.SMALL));
             template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, new EntityId(), 0f));
@@ -135,7 +135,7 @@ namespace Assets.Gamelogic.EntityTemplate
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TargetNavigation>(CommonRequirementSets.PhysicsOnly)
@@ -152,7 +152,7 @@ namespace Assets.Gamelogic.EntityTemplate
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.NPCWizardPrefabName };
             template.Add(new TransformComponent.Data(initialPosition, 0));
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new Health.Data(SimulationSettings.WizardMaxHealth, SimulationSettings.WizardMaxHealth, true));
             template.Add(new Flammable.Data(false, true, FireEffectType.SMALL));
             template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, new EntityId(), 0f));
@@ -163,7 +163,7 @@ namespace Assets.Gamelogic.EntityTemplate
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TargetNavigation>(CommonRequirementSets.PhysicsOnly)
@@ -179,7 +179,7 @@ namespace Assets.Gamelogic.EntityTemplate
         public static SnapshotEntity CreateHQTemplate(Coordinates initialPosition, uint initialRotation, uint teamId)
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.HQPrefabName };
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new HQInfo.Data(new List<EntityId>()));
             template.Add(new TransformComponent.Data(initialPosition, initialRotation));
             template.Add(new Health.Data(SimulationSettings.HQMaxHealth, SimulationSettings.HQMaxHealth, true));
@@ -188,7 +188,7 @@ namespace Assets.Gamelogic.EntityTemplate
 
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<HQInfo>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
@@ -204,13 +204,13 @@ namespace Assets.Gamelogic.EntityTemplate
         {
 			var template = new SnapshotEntity { Prefab = SimulationSettings.PlayerSpawnerPrefabName };
             template.Add(new TransformComponent.Data(Coordinates.ZERO, 0));
-            template.Add(new FSimAuthorityCheck.Data());
+            template.Add(new UnityWorkerAuthorityCheck.Data());
             template.Add(new PlayerSpawning.Data());
 
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
                 .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<UnityWorkerAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<PlayerSpawning>(CommonRequirementSets.PhysicsOnly);
 
             template.SetAcl(permissions);

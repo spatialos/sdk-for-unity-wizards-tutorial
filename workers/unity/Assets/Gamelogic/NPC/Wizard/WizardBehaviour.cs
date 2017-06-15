@@ -21,7 +21,7 @@ namespace Assets.Gamelogic.NPC.Wizard
         [Require] private Spells.Writer spells;
 
         [SerializeField] private SpellsBehaviour spellsBehaviour;
-        [SerializeField] private TeamAssignmentVisualizerFSim teamAssignment;
+        [SerializeField] private TeamAssignmentVisualizerUnityWorker teamAssignment;
         [SerializeField] private TargetNavigationBehaviour navigation;
         [SerializeField] private List<Coordinates> cachedTeamHqCoordinates;
 

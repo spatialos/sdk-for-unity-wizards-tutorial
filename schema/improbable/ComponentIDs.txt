@@ -1,4 +1,4 @@
-1001 FSimAuthorityCheck
+1001 UnityWorkerAuthorityCheck
 1002 Transform
 1003 Heartbeat
 1004 Inventory

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Assets.Gamelogic.Core
 {
     [WorkerType(WorkerPlatform.UnityWorker)]
-    public class TransformReceiverFSim : MonoBehaviour
+    public class TransformReceiverUnityWorker : MonoBehaviour
     {
         [Require] private TransformComponent.Reader transformComponent;
 

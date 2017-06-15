@@ -27,6 +27,7 @@ namespace Assets.Gamelogic.NPC.Wizard
             npcWizard.ComponentUpdated.Add(StateUpdated);
             targetNavigation.ComponentUpdated.Add(NavigationUpdated);
             flammable.ComponentUpdated.Add(FlammableUpdated);
+            ResetAllAnimationState();
             SetAnimationState(npcWizard.Data.currentState);
             SetForwardSpeed(TargetNavigationBehaviour.IsInTransit(targetNavigation));
         }
@@ -38,7 +39,7 @@ namespace Assets.Gamelogic.NPC.Wizard
             flammable.ComponentUpdated.Remove(FlammableUpdated);
         }
 
-        private void StateUpdated(NPCWizard.Update stateUpdate)
+        public void StateUpdated(NPCWizard.Update stateUpdate)
         {
             if (stateUpdate.currentState.HasValue)
             {
@@ -87,6 +88,12 @@ namespace Assets.Gamelogic.NPC.Wizard
             {
                 CastAnim.Stop();
             }
+        }
+
+        private void ResetAllAnimationState()
+        {
+            anim.SetBool("Casting", false);
+            anim.SetBool("OnFire", false);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Assets.Gamelogic.Core
             switch (SpatialOS.Configuration.WorkerPlatform)
             {
                 case WorkerPlatform.UnityWorker:
-                    Application.targetFrameRate = SimulationSettings.TargetFramerateFSim;
+                    Application.targetFrameRate = SimulationSettings.TargetFramerateUnityWorker;
                     SpatialOS.OnDisconnected += reason => Application.Quit();
                     SpatialOS.Connect(gameObject);
                     break;

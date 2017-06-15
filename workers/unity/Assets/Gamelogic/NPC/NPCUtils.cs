@@ -64,13 +64,13 @@ namespace Assets.Gamelogic.NPC
 
         public static bool IsTargetAttackable(GameObject reference, GameObject target)
         {
-            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerFSim>();
+            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerUnityWorker>();
             if (teamAssignment == null)
             {
-                Debug.LogError("Failed to find TeamAssignmentVisualizerFSim in IsTargetAttackable.");
+                Debug.LogError("Failed to find TeamAssignmentVisualizerUnityWorker in IsTargetAttackable.");
                 return false;
             }
-            var targetTeamAssignment = target.GetComponent<TeamAssignmentVisualizerFSim>();
+            var targetTeamAssignment = target.GetComponent<TeamAssignmentVisualizerUnityWorker>();
             var targetFlammable = target.GetComponent<FlammableBehaviour>();
             var targetHealth = target.GetComponent<HealthVisualizer>();
 
@@ -84,13 +84,13 @@ namespace Assets.Gamelogic.NPC
 
         public static bool IsTargetDefendable(GameObject reference, GameObject target)
         {
-            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerFSim>();
+            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerUnityWorker>();
             if (teamAssignment == null)
             {
-                Debug.LogError("Failed to find TeamAssignmentVisualizerFSim in IsTargetDefendable.");
+                Debug.LogError("Failed to find TeamAssignmentVisualizerUnityWorker in IsTargetDefendable.");
                 return false;
             }
-            var targetTeamAssignment = target.GetComponent<TeamAssignmentVisualizerFSim>();
+            var targetTeamAssignment = target.GetComponent<TeamAssignmentVisualizerUnityWorker>();
             var targetFlammable = target.GetComponent<FlammableBehaviour>();
             var targetHealth = target.GetComponent<HealthVisualizer>();
             
@@ -104,14 +104,14 @@ namespace Assets.Gamelogic.NPC
 
         public static bool IsTargetATeamStockpile(GameObject reference, GameObject target)
         {
-            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerFSim>();
+            var teamAssignment = reference.GetComponent<TeamAssignmentVisualizerUnityWorker>();
             if (teamAssignment == null)
             {
-                Debug.LogError("Failed to find TeamAssignmentVisualizerFSim in IsTargetATeamStockpile.");
+                Debug.LogError("Failed to find TeamAssignmentVisualizerUnityWorker in IsTargetATeamStockpile.");
                 return false;
             }
             var targetBarracksInfoVisualizer = target.GetComponent<BarracksInfoVisualizer>();
-            var targetTeamAssignmentVisualizer = target.GetComponent<TeamAssignmentVisualizerFSim>();
+            var targetTeamAssignmentVisualizer = target.GetComponent<TeamAssignmentVisualizerUnityWorker>();
 
             return targetBarracksInfoVisualizer != null && 
                    targetTeamAssignmentVisualizer != null && 

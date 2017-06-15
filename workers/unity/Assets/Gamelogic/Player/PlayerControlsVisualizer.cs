@@ -11,7 +11,7 @@ namespace Assets.Gamelogic.Player
     [WorkerType(WorkerPlatform.UnityWorker)]
     public class PlayerControlsVisualizer : MonoBehaviour
     {
-        [Require] private FSimAuthorityCheck.Writer fsimAuthorityCheck;
+        [Require] private UnityWorkerAuthorityCheck.Writer unityworkerAuthorityCheck;
         [Require] private PlayerInfo.Reader playerInfo;
         [Require] private PlayerControls.Reader playerControls;
 
@@ -33,9 +33,9 @@ namespace Assets.Gamelogic.Player
         
         private void MovePlayer()
         {
-            if (ShouldMovePlayerFSim(TargetPosition, myRigidbody.position))
+            if (ShouldMovePlayerUnityWorker(TargetPosition, myRigidbody.position))
             {
-                if (PlayerMovementCheatSafeguardPassedFSim(TargetPosition, myRigidbody.position))
+                if (PlayerMovementCheatSafeguardPassedUnityWorker(TargetPosition, myRigidbody.position))
                 {
                     transform.LookAt(TargetPosition);
                     myRigidbody.MovePosition(TargetPosition);
@@ -47,12 +47,12 @@ namespace Assets.Gamelogic.Player
             }
         }
 
-        private bool ShouldMovePlayerFSim(Vector3 targetPosition, Vector3 currentPosition)
+        private bool ShouldMovePlayerUnityWorker(Vector3 targetPosition, Vector3 currentPosition)
         {
             return playerInfo.Data.isAlive && (targetPosition - currentPosition).FlattenVector().sqrMagnitude > SimulationSettings.PlayerPositionUpdateMinSqrDistance;
         }
 
-        private bool PlayerMovementCheatSafeguardPassedFSim(Vector3 targetPosition, Vector3 currentPosition)
+        private bool PlayerMovementCheatSafeguardPassedUnityWorker(Vector3 targetPosition, Vector3 currentPosition)
         {
             return (targetPosition - currentPosition).sqrMagnitude < SimulationSettings.PlayerPositionUpdateMaxSqrDistance;
         }

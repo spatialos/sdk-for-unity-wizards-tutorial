@@ -12,11 +12,11 @@ namespace Assets.Gamelogic.NPC.Wizard
 {
     public class WizardIdleState : FsmBaseState<WizardStateMachine, WizardFSMState.StateEnum>
     {
-        private readonly TeamAssignmentVisualizerFSim teamAssignment;
+        private readonly TeamAssignmentVisualizerUnityWorker teamAssignment;
         private readonly IList<Coordinates> cachedTeamHqCoordinates;
 
         public WizardIdleState(WizardStateMachine owner,
-                               TeamAssignmentVisualizerFSim inTeamAssignment,
+                               TeamAssignmentVisualizerUnityWorker inTeamAssignment,
                                IList<Coordinates> inCachedTeamHqCoordinates)
             : base(owner)
         {

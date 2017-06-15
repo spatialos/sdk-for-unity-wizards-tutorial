@@ -18,7 +18,7 @@ namespace Assets.Gamelogic.NPC.Wizard
         public WizardStateMachine(WizardBehaviour behaviour,
                                   NPCWizard.Writer inNpcWizard,
                                   TargetNavigationBehaviour navigation,
-                                  TeamAssignmentVisualizerFSim teamAssignment,
+                                  TeamAssignmentVisualizerUnityWorker teamAssignment,
                                   TargetNavigation.Writer targetNavigation,
                                   SpellsBehaviour spellsBehaviour,
                                   IList<Coordinates> cachedTeamHqCoordinates)

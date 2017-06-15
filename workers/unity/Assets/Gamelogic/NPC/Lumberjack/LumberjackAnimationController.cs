@@ -1,3 +1,4 @@
+using System;
 using Assets.Gamelogic.Core;
 using Improbable.Core;
 using Improbable.Fire;
@@ -38,6 +39,7 @@ namespace Assets.Gamelogic.NPC.Lumberjack
             targetNavigation.ComponentUpdated.Add(NavigationUpdated);
             flammable.ComponentUpdated.Add(FlammableUpdated);
             inventory.ComponentUpdated.Add(OnInventoryUpdated);
+            ResetAllLocalState();
             SetAnimationState(npcLumberjack.Data.currentState);
             SetForwardSpeed(TargetNavigationBehaviour.IsInTransit(targetNavigation));
         }
@@ -144,6 +146,19 @@ namespace Assets.Gamelogic.NPC.Lumberjack
         {
             int soundToPlay = new System.Random().Next(choppingSounds.Length);
             audioSource.PlayOneShot(choppingSounds[soundToPlay]);
+        }
+
+        private void ResetAllLocalState()
+        {
+            anim.SetBool("Dropping", false);
+            anim.SetBool("Chopping", false);
+            anim.SetBool("Carrying", false);
+            anim.SetBool("Walking", false);
+            anim.SetBool("OnFire", false);
+            Axe.SetActive(false);
+            Log.SetActive(false);
+            cachedResourcesCount = 0;
+            cachedFsmState = LumberjackFSMState.StateEnum.IDLE;
         }
     }
 }

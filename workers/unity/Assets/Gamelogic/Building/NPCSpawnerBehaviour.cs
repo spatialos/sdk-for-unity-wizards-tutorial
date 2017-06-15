@@ -106,7 +106,7 @@ namespace Assets.Gamelogic.Building
             var count = 0;
             for (var i = 0; i < lumberjacks.Length; ++i)
             {
-                var teamAssignmentVisualizer = lumberjacks[i].GetComponent<TeamAssignmentVisualizerFSim>();
+                var teamAssignmentVisualizer = lumberjacks[i].GetComponent<TeamAssignmentVisualizerUnityWorker>();
                 if (teamAssignmentVisualizer != null && teamAssignmentVisualizer.TeamId == teamAssignment.Data.teamId)
                 {
                     ++count;
@@ -132,7 +132,7 @@ namespace Assets.Gamelogic.Building
             var count = 0;
             for (var i = 0; i < wizards.Length; ++i)
             {
-                var teamAssignmentVisualizer = wizards[i].GetComponent<TeamAssignmentVisualizerFSim>();
+                var teamAssignmentVisualizer = wizards[i].GetComponent<TeamAssignmentVisualizerUnityWorker>();
                 if (teamAssignmentVisualizer != null && teamAssignmentVisualizer.TeamId == teamAssignment.Data.teamId)
                 {
                     ++count;

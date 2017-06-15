@@ -74,7 +74,7 @@ namespace Assets.Gamelogic.Core
         public static float AngleQuantisationFactor = 2f;
 
         // Worker Connection
-        public const int TargetFramerateFSim = 60;
+        public const int TargetFramerateUnityWorker = 60;
         public static int TargetFramerate = 120;
         public static int FixedFramerate = 10;
         public static float PlayerHeartbeatInterval = 10f;
@@ -121,7 +121,7 @@ namespace Assets.Gamelogic.Core
         public static KeyCode AbortKey = KeyCode.Escape;
 
         // Camera Controls
-        public static float CameraSensitivity = 2f;
+        public static float CameraSensitivity = 4f;
         public static float CameraDefaultDistance = 20f;
         public static float CameraMinDistance = 16f;
         public static float CameraMaxDistance = 22f;

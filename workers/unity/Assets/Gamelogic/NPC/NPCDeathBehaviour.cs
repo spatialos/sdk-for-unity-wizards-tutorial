@@ -11,7 +11,7 @@ namespace Assets.Gamelogic.NPC
     [WorkerType(WorkerPlatform.UnityWorker)]
     public class NPCDeathBehaviour : MonoBehaviour
     {
-        [Require] private FSimAuthorityCheck.Writer fSimAuthorityCheck;
+        [Require] private UnityWorkerAuthorityCheck.Writer unityWorkerAuthorityCheck;
         [Require] private Health.Reader health;
 
         private bool npcDeathActive;
@@ -39,7 +39,7 @@ namespace Assets.Gamelogic.NPC
         {
             if (npcDeathActive && update.currentHealth.Value <= 0)
             {
-                SpatialOS.Commands.DeleteEntity(fSimAuthorityCheck, gameObject.EntityId());
+                SpatialOS.Commands.DeleteEntity(unityWorkerAuthorityCheck, gameObject.EntityId());
             }
         }
     }

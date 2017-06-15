@@ -1,5 +1,5 @@
 package improbable.core;
 
-component FSimAuthorityCheck {
+component UnityWorkerAuthorityCheck {
   id = 1001;
 }
