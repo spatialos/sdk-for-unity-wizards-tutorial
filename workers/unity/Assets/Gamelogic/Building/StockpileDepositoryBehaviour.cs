@@ -1,6 +1,5 @@
 using Assets.Gamelogic.ComponentExtensions;
-using Assets.Gamelogic.Core;
-using Assets.Gamelogic.Life;
+using Improbable;
 using Improbable.Building;
 using Improbable.Core;
 using Improbable.Entity.Component;

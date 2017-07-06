@@ -1,5 +1,4 @@
 using Improbable;
-using Improbable.Math;
 using UnityEngine;
 
 namespace Assets.Gamelogic.Core
@@ -117,7 +116,6 @@ namespace Assets.Gamelogic.Core
         public static int RotateCameraMouseButton = 1;
         public static KeyCode CastLightningKey = KeyCode.E;
         public static KeyCode CastRainKey = KeyCode.R;
-        public static KeyCode SubmitChatKey = KeyCode.Return;
         public static KeyCode AbortKey = KeyCode.Escape;
 
         // Camera Controls

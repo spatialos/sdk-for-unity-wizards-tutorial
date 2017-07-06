@@ -1,6 +1,6 @@
 ﻿using Assets.Gamelogic.Core;
+using Improbable;
 using Improbable.Abilities;
-using Improbable.Math;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;

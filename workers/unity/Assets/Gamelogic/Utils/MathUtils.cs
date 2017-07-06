@@ -1,4 +1,4 @@
-using Improbable.Math;
+using Improbable;
 using UnityEngine;
 
 namespace Assets.Gamelogic.Utils

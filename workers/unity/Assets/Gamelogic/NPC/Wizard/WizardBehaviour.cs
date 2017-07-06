@@ -5,7 +5,6 @@ using Assets.Gamelogic.Team;
 using Improbable;
 using Improbable.Abilities;
 using Improbable.Collections;
-using Improbable.Math;
 using Improbable.Npc;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;

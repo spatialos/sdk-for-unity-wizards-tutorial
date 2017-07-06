@@ -3,13 +3,13 @@ using Assets.Gamelogic.EntityTemplate;
 using Assets.Gamelogic.Utils;
 using Improbable.Building;
 using Improbable.Collections;
-using Improbable.Math;
 using Improbable.Npc;
 using Improbable.Team;
 using Improbable.Unity.Core;
 using Improbable.Unity.Visualizer;
 using System.Collections.Generic;
 using Assets.Gamelogic.Team;
+using Improbable;
 using UnityEngine;
 
 namespace Assets.Gamelogic.Building
@@ -123,7 +123,7 @@ namespace Assets.Gamelogic.Building
                 return;
             }
             var template = EntityTemplateFactory.CreateNPCLumberjackTemplate(position, teamAssignment.Data.teamId);
-            SpatialOS.Commands.CreateEntity(npcSpawner, SimulationSettings.NPCPrefabName, template);
+            SpatialOS.Commands.CreateEntity(npcSpawner, template);
         }
 
         private int GetWizardCount()
@@ -155,7 +155,7 @@ namespace Assets.Gamelogic.Building
                 return;
             }
             var template = EntityTemplateFactory.CreateNPCWizardTemplate(position, teamAssignment.Data.teamId);
-            SpatialOS.Commands.CreateEntity(npcSpawner, SimulationSettings.NPCWizardPrefabName, template);
+            SpatialOS.Commands.CreateEntity(npcSpawner, template);
         }
 
         public void ResetCooldowns()

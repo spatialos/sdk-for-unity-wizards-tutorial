@@ -6,6 +6,7 @@ using UnityEngine;
 using Improbable.Unity.Core;
 using Assets.Gamelogic.Core;
 using Assets.Gamelogic.Utils;
+using Improbable;
 using Improbable.Unity;
 
 namespace Assets.Gamelogic.Fire

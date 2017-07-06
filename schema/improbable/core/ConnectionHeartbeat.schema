@@ -5,5 +5,5 @@ import "improbable/core/Nothing.schema";
 component ConnectionHeartbeat {
   id = 1003;
   uint32 timeout_beats = 1;
-  command Nothing heartbeat(Nothing);
+  command improbable.core.Nothing heartbeat(improbable.core.Nothing);
 }

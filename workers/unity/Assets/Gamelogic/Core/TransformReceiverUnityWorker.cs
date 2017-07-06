@@ -1,4 +1,5 @@
 using Assets.Gamelogic.Utils;
+using Improbable;
 using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
@@ -9,6 +10,7 @@ namespace Assets.Gamelogic.Core
     [WorkerType(WorkerPlatform.UnityWorker)]
     public class TransformReceiverUnityWorker : MonoBehaviour
     {
+        [Require] private Position.Reader positionComponent;
         [Require] private TransformComponent.Reader transformComponent;
 
         [SerializeField] private Rigidbody myRigidbody;
@@ -39,7 +41,7 @@ namespace Assets.Gamelogic.Core
 
         private void UpdateTransform()
         {
-            myRigidbody.MovePosition(transformComponent.Data.position.ToVector3());
+            myRigidbody.MovePosition(positionComponent.Data.coords.ToVector3());
             myRigidbody.MoveRotation(Quaternion.Euler(0f, QuantizationUtils.DequantizeAngle(transformComponent.Data.rotation), 0f));
         }        
     }

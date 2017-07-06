@@ -1,5 +1,6 @@
 package improbable.abilities;
 
+import "improbable/standard_library.schema";
 import "improbable/core/Nothing.schema";
 
 enum SpellType {
@@ -9,12 +10,12 @@ enum SpellType {
 
 type SpellCastRequest {
   SpellType spell_type = 1;
-  Coordinates position = 2;
+  improbable.Coordinates position = 2;
 }
 
 type SpellAnimationEvent {
   SpellType spell_type = 1;
-  Coordinates position = 2;
+  improbable.Coordinates position = 2;
 }
 
 type SpellsData {
@@ -25,6 +26,6 @@ type SpellsData {
 component Spells {
   id = 1500;
   data SpellsData;
-  command improbable.core.Nothing spell_cast_request(SpellCastRequest);
+  command core.Nothing spell_cast_request(SpellCastRequest);
   event SpellAnimationEvent spell_animation_event;
 }

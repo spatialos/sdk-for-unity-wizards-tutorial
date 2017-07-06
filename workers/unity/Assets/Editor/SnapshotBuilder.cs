@@ -11,7 +11,7 @@ namespace Assets.Editor
         private string snapshotPath;
 
         private int currentEntityId = 1;
-        private IDictionary<EntityId, SnapshotEntity> snapshotEntities = new Dictionary<EntityId, SnapshotEntity>();
+        private IDictionary<EntityId, Entity> snapshotEntities = new Dictionary<EntityId, Entity>();
 
         public SnapshotBuilder(string name, string path)
         {
@@ -33,7 +33,7 @@ namespace Assets.Editor
             }
         }
 
-        public void Add(EntityId id, SnapshotEntity entity)
+        public void Add(EntityId id, Entity entity)
         {
             snapshotEntities.Add(id, entity);
         }

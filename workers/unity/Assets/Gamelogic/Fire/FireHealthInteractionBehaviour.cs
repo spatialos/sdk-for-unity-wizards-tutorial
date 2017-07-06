@@ -1,8 +1,5 @@
-using System;
 using Assets.Gamelogic.Core;
-using Assets.Gamelogic.Life;
 using Assets.Gamelogic.Utils;
-using Improbable.Core;
 using Improbable.Fire;
 using Improbable.Life;
 using Improbable.Unity;

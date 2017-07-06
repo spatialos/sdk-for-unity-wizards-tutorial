@@ -1,6 +1,6 @@
 using Assets.Gamelogic.Utils;
+using Improbable;
 using Improbable.Core;
-using Improbable.Math;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
@@ -10,6 +10,7 @@ namespace Assets.Gamelogic.Core
     [WorkerType(WorkerPlatform.UnityWorker)]
     public class TransformSender : MonoBehaviour
     {
+        [Require] private Position.Writer positionComponent;
         [Require] private TransformComponent.Writer transformComponent;
 
         private int fixedFramesSinceLastUpdate = 0;
@@ -17,12 +18,13 @@ namespace Assets.Gamelogic.Core
         public void TriggerTeleport(Vector3 position)
         {
             transform.position = position;
-            transformComponent.Send(new TransformComponent.Update().SetPosition(position.ToCoordinates()).AddTeleportEvent(new TeleportEvent(position.ToCoordinates())));
+            positionComponent.Send(new Position.Update().SetCoords(position.ToCoordinates()));
+            transformComponent.Send(new TransformComponent.Update().AddTeleportEvent(new TeleportEvent(position.ToCoordinates())));
         }
 
         private void OnEnable()
         {
-            transform.position = transformComponent.Data.position.ToVector3();
+            transform.position = positionComponent.Data.coords.ToVector3();
         }
 
         private void FixedUpdate()
@@ -33,13 +35,14 @@ namespace Assets.Gamelogic.Core
             if ((PositionNeedsUpdate(newPosition) || RotationNeedsUpdate(newRotation)) && fixedFramesSinceLastUpdate > SimulationSettings.TransformUpdatesToSkipBetweenSends)
             {
                 fixedFramesSinceLastUpdate = 0;
-                transformComponent.Send(new TransformComponent.Update().SetPosition(newPosition).SetRotation(newRotation));
+                positionComponent.Send(new Position.Update().SetCoords(newPosition));
+                transformComponent.Send(new TransformComponent.Update().SetRotation(newRotation));
             }
         }
 
         private bool PositionNeedsUpdate(Coordinates newPosition)
         {
-            return !MathUtils.CompareEqualityEpsilon(newPosition, transformComponent.Data.position);
+            return !MathUtils.CompareEqualityEpsilon(newPosition, positionComponent.Data.coords);
         }
 
         private bool RotationNeedsUpdate(float newRotation)

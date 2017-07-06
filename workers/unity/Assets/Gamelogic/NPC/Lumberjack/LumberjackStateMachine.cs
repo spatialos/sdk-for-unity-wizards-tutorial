@@ -2,10 +2,10 @@ using Assets.Gamelogic.FSM;
 using Assets.Gamelogic.NPC.Lumberjack;
 using Assets.Gamelogic.Utils;
 using Improbable;
-using Improbable.Core;
 using Improbable.Npc;
 using Improbable.Team;
 using System.Collections.Generic;
+using Improbable.Core;
 using UnityEngine;
 
 namespace Assets.Gamelogic.NPC.LumberJack

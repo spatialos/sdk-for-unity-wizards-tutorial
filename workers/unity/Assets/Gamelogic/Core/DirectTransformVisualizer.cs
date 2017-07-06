@@ -1,35 +1,41 @@
 using Assets.Gamelogic.Utils;
+using Improbable;
 using Improbable.Core;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
-using Improbable.Math;
 
 namespace Assets.Gamelogic.Core
 {
     public class DirectTransformVisualizer : MonoBehaviour
     {
+        [Require] private Position.Reader positionComponent;
         [Require] private TransformComponent.Reader transformComponent;
 
         private void OnEnable()
         {
+            positionComponent.ComponentUpdated.Add(VisualizePosition);
             transformComponent.ComponentUpdated.Add(VisualizeTransform);
-            SetPosition(transformComponent.Data.position);
+            SetPosition(positionComponent.Data.coords);
             SetRotation(transformComponent.Data.rotation);
         }
 
         private void OnDisable()
         {
+            positionComponent.ComponentUpdated.Remove(VisualizePosition);
             transformComponent.ComponentUpdated.Remove(VisualizeTransform);
+        }
+
+        private void VisualizePosition(Position.Update update)
+        {
+            if(update.coords.HasValue)
+            {
+                SetPosition(update.coords.Value);
+            }
         }
 
         private void VisualizeTransform(TransformComponent.Update update)
         {
-            if(update.position.HasValue)
-            {
-                SetPosition(update.position.Value);
-            }
-
-            if(update.rotation.HasValue)
+            if (update.rotation.HasValue)
             {
                 SetRotation(update.rotation.Value);
             }

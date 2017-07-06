@@ -8,8 +8,6 @@ using Improbable.Player;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
-using Improbable.Communication;
-using Assets.Gamelogic.Communication;
 
 namespace Assets.Gamelogic.Player
 {
@@ -71,22 +69,10 @@ namespace Assets.Gamelogic.Player
             controlsEnabled = false;
         }
 
-        public void ActivateChat()
-        {
-            ChatPanelController.ActivateChatMode();
-            spellsBehaviour.DeactivateSpellCastingMode();
-        }
-
-        public void DeactivateChat()
-        {
-            ChatPanelController.DeactivateChatMode();
-        }
-
         private void Update()
         {
             UpdateMovementDirection();
             UpdateSpellControls();
-            UpdateChatControls();
         }
 
         public void DisableInputForSpellcast()
@@ -105,7 +91,7 @@ namespace Assets.Gamelogic.Player
 
         private void UpdateMovementDirection()
         {
-            if (!controlsEnabled || ChatPanelController.ChatModeActive)
+            if (!controlsEnabled)
             {
                 return;
             }
@@ -116,7 +102,7 @@ namespace Assets.Gamelogic.Player
 
         private void UpdateSpellControls()
         {
-            if (!controlsEnabled || ChatPanelController.ChatModeActive)
+            if (!controlsEnabled)
             {
                 return;
             }
@@ -144,13 +130,6 @@ namespace Assets.Gamelogic.Player
             }
             if (Input.GetMouseButtonDown(SimulationSettings.CastSpellMouseButton) && spellsBehaviour.SpellCastingModeActive) spellsBehaviour.AttemptToCastSpell();
             if (Input.GetKeyDown(SimulationSettings.AbortKey) && spellsBehaviour.SpellCastingModeActive) spellsBehaviour.DeactivateSpellCastingMode();
-        }
-
-        private void UpdateChatControls()
-        {
-            //Todo: Handle enabling and disabling ChatMode here!
-            if (Input.GetKeyDown(KeyCode.UpArrow) && ChatPanelController.ChatModeActive) ChatPanelController.ReuseLastMessage();
-            if (Input.GetKeyDown(SimulationSettings.AbortKey) && ChatPanelController.ChatModeActive) DeactivateChat();
         }
     }
 }

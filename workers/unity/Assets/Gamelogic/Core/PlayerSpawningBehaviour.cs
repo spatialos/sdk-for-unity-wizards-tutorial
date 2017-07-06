@@ -41,16 +41,16 @@ namespace Assets.Gamelogic.Core
                     Debug.LogError("Failed to Reserve EntityId for Player. Retrying...");
                     SpawnPlayerWithReservedId(clientWorkerId);
                 })
-                .OnSuccess(reservedEntityId =>
+                .OnSuccess(result =>
                 {
-                    SpawnPlayer(clientWorkerId, reservedEntityId);
+                    SpawnPlayer(clientWorkerId, result.ReservedEntityId);
                 });
         }
 
         private void SpawnPlayer(string clientWorkerId, EntityId entityId)
         {
-            var playerEntityTemplate = EntityTemplateFactory.CreatePlayerTemplate(clientWorkerId);
-            SpatialOS.Commands.CreateEntity(playerSpawning, entityId, SimulationSettings.PlayerPrefabName, playerEntityTemplate)
+            var playerEntityTemplate = EntityTemplateFactory.CreatePlayerTemplate(clientWorkerId, SimulationSettings.PlayerPrefabName);
+            SpatialOS.Commands.CreateEntity(playerSpawning, entityId, playerEntityTemplate)
                 .OnFailure(_ =>
                 {
                     Debug.LogError("Failed to Create Player Entity. Retrying...");

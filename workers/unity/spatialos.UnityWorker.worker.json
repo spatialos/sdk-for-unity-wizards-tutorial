@@ -18,9 +18,6 @@
     "component_delivery": {
       "default": "RELIABLE_ORDERED",
       "checkout_all_initially": true
-    },
-    "asset_context": {
-      "use_player_context_if_authoritative": false
     }
   },
   "managed": {
@@ -31,7 +28,7 @@
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
         "+receptionistIp",
-        "${IMPROBABLE_RECEPTIONIST_IP}",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
         "+receptionistPort",
         "${IMPROBABLE_RECEPTIONIST_PORT}",
         "+workerType",
@@ -59,7 +56,7 @@
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
         "+receptionistIp",
-        "${IMPROBABLE_RECEPTIONIST_IP}",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
         "+receptionistPort",
         "${IMPROBABLE_RECEPTIONIST_PORT}",
         "+workerType",
@@ -87,7 +84,7 @@
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
         "+receptionistIp",
-        "${IMPROBABLE_RECEPTIONIST_IP}",
+        "${IMPROBABLE_RECEPTIONIST_HOST}",
         "+receptionistPort",
         "${IMPROBABLE_RECEPTIONIST_PORT}",
         "+workerType",

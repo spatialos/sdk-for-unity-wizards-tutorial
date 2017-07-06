@@ -1,4 +1,5 @@
 using Assets.Gamelogic.Utils;
+using Improbable;
 using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
@@ -9,6 +10,7 @@ namespace Assets.Gamelogic.Core
     [WorkerType(WorkerPlatform.UnityClient)]
     public class TransformReceiverClient : MonoBehaviour
     {
+        [Require] private Position.Reader positionComponent;
         [Require] private TransformComponent.Reader transformComponent;
 
         private bool isRemote;
@@ -61,7 +63,7 @@ namespace Assets.Gamelogic.Core
         {
             if (IsNotAnAuthoritativePlayer())
             {
-                myRigidbody.MovePosition(Vector3.Lerp(myRigidbody.position, transformComponent.Data.position.ToVector3(), 0.2f));
+                myRigidbody.MovePosition(Vector3.Lerp(myRigidbody.position, positionComponent.Data.coords.ToVector3(), 0.2f));
                 myRigidbody.MoveRotation(Quaternion.Euler(0f, QuantizationUtils.DequantizeAngle(transformComponent.Data.rotation), 0f));
             }
             else if(isRemote)

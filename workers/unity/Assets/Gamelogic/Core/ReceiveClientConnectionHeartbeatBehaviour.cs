@@ -3,7 +3,6 @@ using Assets.Gamelogic.Utils;
 using Improbable;
 using Improbable.Core;
 using Improbable.Entity.Component;
-using Improbable.Worker;
 using Improbable.Unity;
 using Improbable.Unity.Core;
 using Improbable.Unity.Visualizer;

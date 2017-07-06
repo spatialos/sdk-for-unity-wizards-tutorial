@@ -1,5 +1,7 @@
 package improbable.npc;
 
+import "improbable/vector3.schema";
+
 enum NavigationState {
   INACTIVE = 0;
   POSITION = 1;
@@ -12,7 +14,7 @@ type NavigationFinished {
 
 type TargetNavigationData {
   NavigationState navigation_state = 1;
-  Vector3f target_position = 2;
+  improbable.Vector3f target_position = 2;
   EntityId target_entity_id = 3;
   float interaction_sqr_distance = 4;
 }

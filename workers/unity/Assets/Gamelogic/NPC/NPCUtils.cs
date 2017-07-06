@@ -9,6 +9,7 @@ using Improbable.Building;
 using Improbable.Tree;
 using Improbable.Unity.Core;
 using System;
+using Improbable.Unity.Entity;
 using UnityEngine;
 
 namespace Assets.Gamelogic.NPC
@@ -19,7 +20,7 @@ namespace Assets.Gamelogic.NPC
 
         public static bool TargetExistsLocally(EntityId targetEntityId)
         {
-            return SpatialOS.Universe.ContainsEntity(targetEntityId);
+            return LocalEntities.Instance.ContainsEntity(targetEntityId);
         }
 
         public static GameObject GetTargetGameObject(EntityId targetEntityId)
@@ -28,7 +29,7 @@ namespace Assets.Gamelogic.NPC
             {
                 return null;
             }
-            return SpatialOS.Universe.Get(targetEntityId).UnderlyingGameObject;
+            return LocalEntities.Instance.Get(targetEntityId).UnderlyingGameObject;
         }
 
         public static bool IsWithinInteractionRange(Vector3 currentPosition, Vector3 targetPosition, float interactionSqrDistance)

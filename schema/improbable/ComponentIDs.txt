@@ -29,6 +29,4 @@
 1801 NPCLumberjack
 1802 NPCWizard
 
-1900 Chat
-
 2000 ClientAuthorityCheck

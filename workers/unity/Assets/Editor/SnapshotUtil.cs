@@ -1,7 +1,7 @@
 using Assets.Gamelogic.Core;
 using Assets.Gamelogic.EntityTemplate;
 using Assets.Gamelogic.Utils;
-using Improbable.Math;
+using Improbable;
 using Improbable.Worker;
 using UnityEngine;
 
@@ -86,7 +86,7 @@ namespace Assets.Editor
                 offset *= radiusFromHQ;
                 Coordinates coordinates = (position.ToVector3() + offset).ToCoordinates();
 
-                SnapshotEntity entity = null;
+                Entity entity = null;
                 if (i < SimulationSettings.HQStartingLumberjacksCount)
                 {
                     entity = EntityTemplateFactory.CreateNPCLumberjackTemplate(coordinates, team);

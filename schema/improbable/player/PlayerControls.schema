@@ -1,6 +1,8 @@
 package improbable.player;
 
+import "improbable/standard_library.schema";
+
 component PlayerControls {
   id = 1200;
-  Coordinates target_position = 1;
+  improbable.Coordinates target_position = 1;
 }

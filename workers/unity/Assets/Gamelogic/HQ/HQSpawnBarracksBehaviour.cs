@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Gamelogic.Utils;
 using Improbable.Entity.Component;
+using Improbable.Unity.Entity;
 using UnityEngine;
 
 namespace Assets.Gamelogic.HQ
@@ -65,7 +66,7 @@ namespace Assets.Gamelogic.HQ
         {
             for (var i = 0; i < hqInfo.Data.barracks.Count; i++)
             {
-                var barracksEntityObject = SpatialOS.Universe.Get(hqInfo.Data.barracks[i]);
+                var barracksEntityObject = LocalEntities.Instance.Get(hqInfo.Data.barracks[i]);
                 if (barracksEntityObject != null)
                 {
                     var barracksGameObject = barracksEntityObject.UnderlyingGameObject;
@@ -132,10 +133,10 @@ namespace Assets.Gamelogic.HQ
 
             var teamId = teamAssignment.Data.teamId;
             var template = EntityTemplateFactory.CreateBarracksTemplate(spawnPosition.ToCoordinates(), BarracksState.UNDER_CONSTRUCTION, teamId);
-            SpatialOS.Commands.CreateEntity(hqInfo, SimulationSettings.BarracksPrefabName, template)
+            SpatialOS.Commands.CreateEntity(hqInfo, template)
                 .OnFailure(_ =>
                 {
-                    Debug.LogError("HQ failed to spawn barracks due to timeout.");
+                    Debug.LogWarning("HQ failed to spawn barracks due to timeout.");
                 })
                 .OnSuccess(_ =>
                 {

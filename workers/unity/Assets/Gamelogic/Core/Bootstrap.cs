@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Improbable.Unity;
 using Improbable.Unity.Configuration;
 using Improbable.Unity.Core;
@@ -16,6 +17,17 @@ namespace Assets.Gamelogic.Core
         private void Start()
         {
             SceneManager.LoadScene(SimulationSettings.SplashScreenScene, LoadSceneMode.Additive);
+
+            List<string> assetsToPreCache = new List<string>{
+                SimulationSettings.PlayerPrefabName,
+                SimulationSettings.NPCPrefabName,
+                SimulationSettings.NPCWizardPrefabName,
+                SimulationSettings.HQPrefabName,
+                SimulationSettings.TreePrefabName,
+                SimulationSettings.StockpilePrefabName,
+                SimulationSettings.BarracksPrefabName,
+                SimulationSettings.PlayerSpawnerPrefabName };
+            SpatialOS.AssetsToPrecache = assetsToPreCache;
 
             SpatialOS.ApplyConfiguration(Configuration);
 

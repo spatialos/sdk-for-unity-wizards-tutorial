@@ -89,7 +89,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
         {
             if (response.StatusCode != StatusCode.Success)
             {
-                Debug.LogError("NPC failed to receive Harvest response");
+                Debug.LogWarning("NPC failed to receive Harvest response");
             }
             else
             {
