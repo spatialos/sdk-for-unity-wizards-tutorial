@@ -38,7 +38,7 @@
           "UnityClient",
           "+infraServicesUrl",
           "http://127.0.0.1:21000",
-          "+appName",
+          "+projectName",
           "${IMPROBABLE_PROJECT_NAME}",
           "-logfile",
           "external-default-unityclient.log"
@@ -55,7 +55,7 @@
           "UnityClient",
           "+infraServicesUrl",
           "http://127.0.0.1:21000",
-          "+appName",
+          "+projectName",
           "${IMPROBABLE_PROJECT_NAME}",
           "-logfile",
           "external-default-unityclient.log"
