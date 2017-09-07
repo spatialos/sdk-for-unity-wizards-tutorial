@@ -1,3 +1,4 @@
+using System;
 using Assets.Gamelogic.Utils;
 using Improbable;
 using Improbable.Core;
@@ -11,7 +12,7 @@ namespace Assets.Gamelogic.Core
     public class TransformReceiverUnityWorker : MonoBehaviour
     {
         [Require] private Position.Reader positionComponent;
-        [Require] private TransformComponent.Reader transformComponent;
+        [Require] private TransformComponent.Reader rotationComponent;
 
         [SerializeField] private Rigidbody myRigidbody;
 
@@ -22,27 +23,30 @@ namespace Assets.Gamelogic.Core
 
         private void OnEnable()
         {
-            UpdateTransform();
-            transformComponent.ComponentUpdated.Add(OnComponentUpdated);
+            positionComponent.CoordsUpdated.AddAndInvoke(OnPositionUpdated);
+            rotationComponent.RotationUpdated.AddAndInvoke(OnRotationUpdated);
         }
 
         private void OnDisable()
         {
-            transformComponent.ComponentUpdated.Remove(OnComponentUpdated);
+            positionComponent.CoordsUpdated.Remove(OnPositionUpdated);
+            rotationComponent.RotationUpdated.Remove(OnRotationUpdated);
         }
 
-        private void OnComponentUpdated(TransformComponent.Update update)
+        private void OnPositionUpdated(Coordinates coords)
         {
-            if (!transformComponent.HasAuthority)
+            if (!positionComponent.HasAuthority)
             {
-                UpdateTransform();
+                myRigidbody.MovePosition(coords.ToVector3());
             }
         }
 
-        private void UpdateTransform()
+        private void OnRotationUpdated(uint rotation)
         {
-            myRigidbody.MovePosition(positionComponent.Data.coords.ToVector3());
-            myRigidbody.MoveRotation(Quaternion.Euler(0f, QuantizationUtils.DequantizeAngle(transformComponent.Data.rotation), 0f));
-        }        
+            if (!rotationComponent.HasAuthority)
+            {
+                myRigidbody.MoveRotation(Quaternion.Euler(0f, QuantizationUtils.DequantizeAngle(rotation), 0f));
+            }
+        }
     }
 }
