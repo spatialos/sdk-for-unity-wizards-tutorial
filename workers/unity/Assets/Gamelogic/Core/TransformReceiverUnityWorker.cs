@@ -4,6 +4,7 @@ using Improbable;
 using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
+using Improbable.Worker;
 using UnityEngine;
 
 namespace Assets.Gamelogic.Core
@@ -35,7 +36,7 @@ namespace Assets.Gamelogic.Core
 
         private void OnPositionUpdated(Coordinates coords)
         {
-            if (!positionComponent.HasAuthority)
+            if (positionComponent.Authority == Authority.NotAuthoritative)
             {
                 myRigidbody.MovePosition(coords.ToVector3());
             }
@@ -43,7 +44,7 @@ namespace Assets.Gamelogic.Core
 
         private void OnRotationUpdated(uint rotation)
         {
-            if (!rotationComponent.HasAuthority)
+            if (rotationComponent.Authority == Authority.NotAuthoritative)
             {
                 myRigidbody.MoveRotation(Quaternion.Euler(0f, QuantizationUtils.DequantizeAngle(rotation), 0f));
             }

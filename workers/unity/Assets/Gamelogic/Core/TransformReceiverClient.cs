@@ -3,6 +3,7 @@ using Improbable;
 using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
+using Improbable.Worker;
 using UnityEngine;
 
 namespace Assets.Gamelogic.Core
@@ -56,7 +57,7 @@ namespace Assets.Gamelogic.Core
 
         private bool IsNotAnAuthoritativePlayer()
         {
-            return !gameObject.HasAuthority(ClientAuthorityCheck.ComponentId);
+            return gameObject.GetAuthority(ClientAuthorityCheck.ComponentId) == Authority.NotAuthoritative;
         }
 
         private void Update()

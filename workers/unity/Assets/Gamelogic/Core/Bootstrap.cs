@@ -16,7 +16,6 @@ namespace Assets.Gamelogic.Core
 
         private void Start()
         {
-            SceneManager.LoadScene(SimulationSettings.SplashScreenScene, LoadSceneMode.Additive);
 
             List<string> assetsToPreCache = new List<string>{
                 SimulationSettings.PlayerPrefabName,
@@ -41,6 +40,7 @@ namespace Assets.Gamelogic.Core
                     SpatialOS.Connect(gameObject);
                     break;
                 case WorkerPlatform.UnityClient:
+                    SceneManager.LoadScene(SimulationSettings.SplashScreenScene, LoadSceneMode.Additive);
                     Application.targetFrameRate = SimulationSettings.TargetFramerate;
                     SpatialOS.OnConnected += ClientPlayerSpawner.SpawnPlayer;
                     break;
