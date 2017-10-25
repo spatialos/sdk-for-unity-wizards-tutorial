@@ -21,16 +21,19 @@ namespace Assets.Editor
         public void SaveSnapshot()
         {
             File.Delete(snapshotPath);
-            var result = Snapshot.Save(snapshotPath, snapshotEntities);
-
-            if (result.HasValue)
+            using (SnapshotOutputStream stream = new SnapshotOutputStream(snapshotPath))
             {
-                Debug.LogErrorFormat("Failed to generate initial world snapshot: {0}", result.Value);
+                foreach (var kvp in snapshotEntities)
+                {
+                    var error = stream.WriteEntity(kvp.Key, kvp.Value);
+                    if (error.HasValue)
+                        {
+                            Debug.LogErrorFormat("Failed to generate initial world snapshot: {0}", error.Value);
+                            return;
+                        }
+                }
             }
-            else
-            {
-                Debug.LogFormat("Successfully generated initial world snapshot at {0} with {1} entities", snapshotPath, currentEntityId);
-            }
+            Debug.LogFormat("Successfully generated initial world snapshot at {0}", snapshotPath);
         }
 
         public void Add(EntityId id, Entity entity)

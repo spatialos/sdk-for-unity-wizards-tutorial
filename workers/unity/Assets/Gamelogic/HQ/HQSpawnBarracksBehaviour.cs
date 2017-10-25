@@ -29,37 +29,21 @@ namespace Assets.Gamelogic.HQ
         {
             barracksSpawnRadius = SimulationSettings.DefaultHQBarracksSpawnRadius;
             spawnBarracksPeriodicallyCoroutine = StartCoroutine(TimerUtils.CallRepeatedly(SimulationSettings.SimulationTickInterval * 5f, SpawnBarracks));
-            hqInfo.CommandReceiver.OnRegisterBarracks.RegisterResponse(OnRegisterBarracks);
-            hqInfo.CommandReceiver.OnUnregisterBarracks.RegisterResponse(OnUnregisterBarracks);
             hqInfo.ComponentUpdated.Add(OnComponentUpdated);
             PopulateBarracksDictionary();
         }
 
         private void OnDisable()
         {
-            hqInfo.CommandReceiver.OnRegisterBarracks.DeregisterResponse();
-            hqInfo.CommandReceiver.OnUnregisterBarracks.DeregisterResponse();
             hqInfo.ComponentUpdated.Remove(OnComponentUpdated);
             CancelSpawnBarracksPeriodicallyCoroutine();
         }
 
-        private Nothing OnRegisterBarracks(RegisterBarracksRequest request, ICommandCallerInfo callerinfo)
+        private void RegisterBarracks(EntityId barrackId)
         {
             var newBarracks = new Improbable.Collections.List<EntityId>(hqInfo.Data.barracks);
-            newBarracks.Add(request.entityId);
+            newBarracks.Add(barrackId);
             hqInfo.Send(new HQInfo.Update().SetBarracks(newBarracks));
-            return new Nothing();
-        }
-
-        private Nothing OnUnregisterBarracks(UnregisterBarracksRequest request, ICommandCallerInfo callerinfo)
-        {
-            var barracks = new Improbable.Collections.List<EntityId>(hqInfo.Data.barracks);
-            if (barracks.Contains(request.entityId))
-            {
-                barracks.Remove(request.entityId);
-            }
-            hqInfo.Send(new HQInfo.Update().SetBarracks(barracks));
-            return new Nothing();
         }
 
         private void PopulateBarracksDictionary()
@@ -138,8 +122,9 @@ namespace Assets.Gamelogic.HQ
                 {
                     Debug.LogWarning("HQ failed to spawn barracks due to timeout.");
                 })
-                .OnSuccess(_ =>
+                .OnSuccess(response =>
                 {
+                    RegisterBarracks(response.CreatedEntityId);
                     PopulateBarracksDictionary();
                 });
         }

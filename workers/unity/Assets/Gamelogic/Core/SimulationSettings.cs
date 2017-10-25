@@ -141,7 +141,7 @@ namespace Assets.Gamelogic.Core
         public static float NPCStockpilingAnimationStartDelay = 0.2f;
         public static float NPCStockpilingAnimationFinishdelay = 2f;
         public static float NPCWizardSpellCastingSqrDistance = 36f;
-        public static float NPCWanderWaypointDistance = 10f;
+        public static float NPCWanderWaypointDistance = 50f;
         public static float NPCOnFireWaypointDistance = 10f;
         public static float NPCPerceptionRefreshInterval = 0.5f;
         public static float NPCSpawnDistanceToHQ = 30f;
