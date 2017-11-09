@@ -31,9 +31,9 @@
           },
           "loadbalancer_config": {
             "min_range_meters": 500.0,
-            "max_range_meters": 1000.0,
+            "max_range_meters": 4000.0,
             "speed_meters_per_second": 100.0,
-            "expansion_time_millis": 60000
+            "expansion_time_millis": 6000
           }
         }
       },

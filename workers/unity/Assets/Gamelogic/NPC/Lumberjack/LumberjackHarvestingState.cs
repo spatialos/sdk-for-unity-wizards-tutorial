@@ -76,8 +76,11 @@ namespace Assets.Gamelogic.NPC.LumberJack
             if (targetGameObject != null && NPCUtils.IsTargetAHealthyTree(parentBehaviour.gameObject, targetGameObject))
             {
                 SpatialOS.Commands.SendCommand(inventory,
-                    Harvestable.Commands.Harvest.Descriptor,
-                    new HarvestRequest(parentBehaviour.gameObject.EntityId()), Owner.Data.targetEntityId, OnHarvestResponse);
+                                               Harvestable.Commands.Harvest.Descriptor,
+                                               new HarvestRequest(parentBehaviour.gameObject.EntityId()),
+                                               Owner.Data.targetEntityId,
+                                               OnHarvestResponse,
+                                               new System.TimeSpan(0, 0, 30));
             }
             else
             {
