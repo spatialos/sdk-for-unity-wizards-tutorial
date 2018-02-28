@@ -23,7 +23,6 @@ namespace Assets.Gamelogic.Core
                 SimulationSettings.NPCWizardPrefabName,
                 SimulationSettings.HQPrefabName,
                 SimulationSettings.TreePrefabName,
-                SimulationSettings.StockpilePrefabName,
                 SimulationSettings.BarracksPrefabName,
                 SimulationSettings.PlayerSpawnerPrefabName };
             SpatialOS.AssetsToPrecache = assetsToPreCache;
