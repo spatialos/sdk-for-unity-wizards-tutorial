@@ -14,7 +14,6 @@ namespace Assets.Gamelogic.Core
         public static string NPCWizardPrefabName = "NPCWizard";
         public static string HQPrefabName = "HQ";
         public static string TreePrefabName = "Tree";
-        public static string StockpilePrefabName = "Stockpile";
         public static string BarracksPrefabName = "Barracks";
         public static string PlayerSpawnerPrefabName = "PlayerSpawner";
         public static string LightningPrefabName = "Lightning";
