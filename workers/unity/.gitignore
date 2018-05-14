@@ -11,7 +11,6 @@ Assets/Gamelogic/Generated.meta
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp-firstpass.csproj
 Assembly-CSharp.csproj
-spatialos.*.build.json
 *.log
 
 # Standard Unity Ignores
