@@ -1,10 +1,7 @@
 #Improbable Unity Ignores
-build.json
 .invoke.log
 zip_toolbelt.log
-Improbable.meta
 Assets/Improbable
-Assets/Plugins/Improbable
 Assets/Plugins/x86/Improbable
 Assets/Plugins/x86.meta
 Assets/Plugins/x86_64/Improbable
@@ -14,7 +11,6 @@ Assets/Gamelogic/Generated.meta
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp-firstpass.csproj
 Assembly-CSharp.csproj
-spatialos.*.build.json
 *.log
 
 # Standard Unity Ignores
