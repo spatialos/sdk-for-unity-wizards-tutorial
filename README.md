@@ -6,7 +6,7 @@
 
 *Copyright (C) 2017 Improbable Worlds Limited. All rights reserved.*
 
-- [Guide](https://docs.improbable.io/reference/latest/getting-started/tour/intro)
+- [Guide](https://docs.improbable.io/reference/13.0/shared/get-started/tour)
 - *GitHub repository*: https://github.com/spatialos/Wizards/
 
 *****
@@ -16,16 +16,16 @@
 This repository contains a demo project built with [SpatialOS](http://www.spatialos.com).
 It demonstrates how to use SpatialOS to build a large and compelling simulated world.
 
-The project serves as a starting point for the [hands-on SpatialOS product demo](https://docs.improbable.io/reference/latest/shared/get-started/tour).
+The project serves as a starting point for the [hands-on SpatialOS product demo](https://docs.improbable.io/reference/13.0/shared/get-started/tour).
 
-The main documentation for SpatialOS can be found [here](https://spatialos.improbable.io/docs/reference/latest/index).
+The main documentation for SpatialOS can be found [here](https://spatialos.improbable.io/docs/reference/13.0/index).
 
 If you run into problems, or want to give us feedback, please visit the [SpatialOS forums](https://forums.improbable.io/).
 
 #### To use the repository
 
 * Make sure you have access to SpatialOS
-* Install dependencies for [Windows](https://docs.improbable.io/reference/latest/shared/get-started/setup/win) or [Mac](https://spatialos.improbable.io/docs/reference/latest/shared/get-started/setup/mac)
+* Install dependencies for [Windows](https://docs.improbable.io/reference/13.0/shared/get-started/setup/win) or [Mac](https://spatialos.improbable.io/docs/reference/13.0/shared/get-started/setup/mac)
 * Clone the repo: `git clone https://github.com/spatialos/wizards`
 * Move into the directory: `cd wizards`
 * Build the project: `spatial worker build`
