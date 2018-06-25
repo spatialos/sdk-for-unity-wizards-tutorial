@@ -5,7 +5,7 @@
 
 
 - [Guide](https://docs.improbable.io/reference/13.0/shared/get-started/tour) (Website docs)
-- *GitHub repository*: github.com/spatialos/Wizards
+- GitHub repository: [github.com/spatialos/Wizards](https://github.com/spatialos/Wizards)
 
 *****
 
