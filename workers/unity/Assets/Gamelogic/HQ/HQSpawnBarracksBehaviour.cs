@@ -117,7 +117,7 @@ namespace Assets.Gamelogic.HQ
 
             var teamId = teamAssignment.Data.teamId;
             var template = EntityTemplateFactory.CreateBarracksTemplate(spawnPosition.ToCoordinates(), BarracksState.UNDER_CONSTRUCTION, teamId);
-            SpatialOS.Commands.CreateEntity(hqInfo, template, new System.TimeSpan(0, 0, 30))
+            SpatialOS.Commands.CreateEntity(hqInfo, template, new System.TimeSpan(0, 0, 5))
                 .OnFailure(_ =>
                 {
                     Debug.LogWarning("HQ failed to spawn barracks due to timeout.");
