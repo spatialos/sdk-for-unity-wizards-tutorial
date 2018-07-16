@@ -80,7 +80,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
                                                new HarvestRequest(parentBehaviour.gameObject.EntityId()),
                                                Owner.Data.targetEntityId,
                                                OnHarvestResponse,
-                                               new System.TimeSpan(0, 0, 30));
+                                               new System.TimeSpan(0, 0, 5));
             }
             else
             {
