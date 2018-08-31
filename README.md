@@ -1,11 +1,12 @@
 # Wizards! (SpatialOS)
 
+> **Important notice:** We are retiring the Wizards project! This repository will remain in place, but we no longer recommend Wizards as part of your path to learning about SpatialOS. For a better experience, get hands-on with the [Pirates tutorial](https://github.com/spatialos/PiratesTutorial), learn the [core concepts of SpatialOS](https://docs.improbable.io/reference/latest/shared/concepts/spatialos), and read about tools for [running a live game](https://docs.improbable.io/reference/latest/shared/operate/inspector).
+
+
+
 ![Wizards Logo](wizards-logo.jpg)
 
-
-
 - [Guide](https://docs.improbable.io/reference/13.0/shared/get-started/tour) (Website docs)
-- GitHub repository: [github.com/spatialos/Wizards](https://github.com/spatialos/Wizards)
 
 *****
 
@@ -48,4 +49,4 @@ Check out the pre-alpha release of our new Unity GDK: [source code on GitHub](ht
 <br/>
 
 ---
-*Copyright (C) 2017 Improbable Worlds Limited. All rights reserved.*
+*Copyright (C) 2018 Improbable Worlds Limited. All rights reserved.*
