@@ -24,7 +24,7 @@ If you run into problems, or want to give us feedback, please visit the [Spatial
 ---
 
 **New from June 2018: The SpatialOS Unity GDK**<br/>
-Check out the pre-alpha release of our new Unity GDK: [source code on GitHub](https://github.com/spatialos.com/UnityGDK). Using the Unity Entity Component System (ECS), the GDK is the next evolution in SpatialOS Unity game development. See our [blog post on ECS-powered multiplayer](https://improbable.io/games/blog/unity-gdk-our-first-steps) for more information.
+Check out the pre-alpha release of our new Unity GDK: [source code on GitHub](https://github.com/spatialos/UnityGDK). Using the Unity Entity Component System (ECS), the GDK is the next evolution in SpatialOS Unity game development. See our [blog post on ECS-powered multiplayer](https://improbable.io/games/blog/unity-gdk-our-first-steps) for more information.
 <br/>
 <br/>
 **Note:** The pre-alpha GDK version is available for evaluation and feedback only. It's not yet game-development ready.
